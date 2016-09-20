@@ -1504,9 +1504,7 @@ class Log(models.Model):
                 + admin_link + '\n\n' + body
         
         send_mail(
-            from_email = '"%s" <%s>' % (
-                settings.CHRONIKER_EMAIL_SENDER,
-                settings.CHRONIKER_EMAIL_HOST_USER),
+            from_email = '%s' % settings.CHRONIKER_EMAIL_SENDER,
             subject = subject,
             recipient_list = subscribers,
             message = body
