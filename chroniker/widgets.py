@@ -4,7 +4,11 @@ from django.contrib import admin
 from django.contrib.admin.sites import site
 from django.contrib.admin.widgets import ManyToManyRawIdWidget, ForeignKeyRawIdWidget
 from django.core.urlresolvers import reverse
-from django.forms.widgets import Select, TextInput, flatatt
+from django.forms.widgets import Select, TextInput
+try:
+    from django.forms.widgets import flatatt
+except ImportError:
+    from django.forms.utils import flatatt
 try:
     # force_unicode was deprecated in Django 1.5.
     from django.utils.encoding import force_unicode as force_text
