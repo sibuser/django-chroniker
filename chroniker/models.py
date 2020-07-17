@@ -1466,7 +1466,7 @@ class Log(models.Model):
             body = 'To manage this job please visit: ' + admin_link + '\n\n' + body
 
         send_mail(
-            from_email='"%s" <%s>' % (_settings.CHRONIKER_EMAIL_SENDER, _settings.CHRONIKER_EMAIL_HOST_USER),
+            from_email='%s' % _settings.CHRONIKER_EMAIL_SENDER,
             subject=subject,
             recipient_list=subscribers,
             message=body,
