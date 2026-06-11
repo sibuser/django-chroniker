@@ -34,7 +34,7 @@ class Migration(migrations.Migration):
                 ('last_run', models.DateTimeField(blank=True, editable=False, null=True, verbose_name='last run end timestamp')),
                 ('last_heartbeat', models.DateTimeField(blank=True, editable=False, null=True, verbose_name='last heartbeat')),
                 ('is_running', models.BooleanField(default=False)),
-                ('last_run_successful', models.NullBooleanField(editable=False, verbose_name='success')),
+                ('last_run_successful', models.BooleanField(null=True, editable=False, verbose_name='success')),
                 ('email_errors_to_subscribers', models.BooleanField(default=True, help_text='If checked, the stdout and stderr of a job will be emailed to the subscribers if an error occur.')),
                 ('email_success_to_subscribers', models.BooleanField(default=False, help_text='If checked, the stdout of a job will be emailed to the subscribers if not errors occur.')),
                 ('lock_file', models.CharField(blank=True, editable=False, max_length=255)),

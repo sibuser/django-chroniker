@@ -5,7 +5,7 @@ from __future__ import print_function
 #DJANGO_VERSION = StrictVersion(django.get_version())
 from django import forms
 from django.conf import settings
-from django.conf.urls import url
+from django.urls import re_path as url
 from django.contrib import admin
 from django.core.management import get_commands
 try:
@@ -15,7 +15,7 @@ except ImportError:
 from django.db import models
 from django.forms import TextInput
 from django.shortcuts import render
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str as force_text
 from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.template.defaultfilters import linebreaks
 from django.utils import dateformat, timezone
@@ -24,7 +24,7 @@ from django.utils.formats import get_format
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 from django.utils.text import capfirst
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from chroniker.models import Job, Log, JobDependency, Monitor
 from chroniker import utils
